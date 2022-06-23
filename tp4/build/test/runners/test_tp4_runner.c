@@ -82,8 +82,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_tp4.c");
-  run_test(test_inicializacion_objeto_uart, "test_inicializacion_objeto_uart", 29);
-  run_test(test_transmision_un_byte, "test_transmision_un_byte", 40);
+  run_test(test_inicializacion_objeto_uart, "test_inicializacion_objeto_uart", 30);
+  run_test(test_transmision_un_byte, "test_transmision_un_byte", 41);
 
   return UnityEnd();
 }

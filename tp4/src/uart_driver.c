@@ -12,9 +12,9 @@ uart_struct_t uart_init(UART_HandleTypeDef * uart_handle)
 	return uart_struct;
 }
 
-void uart_transmit(UART_HandleTypeDef * uart_port, char *message)
+void uart_transmit(UART_HandleTypeDef * uart_port, uint8_t *message)
 {
-	
+	transmit_buffer[0] = *message;
 }
 
 bool uart_receive(UART_HandleTypeDef * uart_port, char * message, uint16_t length)

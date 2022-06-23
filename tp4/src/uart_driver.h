@@ -19,13 +19,13 @@ typedef enum
 typedef struct
 {
 	UART_HandleTypeDef * uart_port;
-	void (*transmit)(UART_HandleTypeDef * uart, char *message);
+	void (*transmit)(UART_HandleTypeDef * uart, uint8_t *message);
 	bool (*receive)(UART_HandleTypeDef * uart, char *message, uint16_t length);
 }uart_struct_t;
 
 uart_struct_t uart_init(UART_HandleTypeDef * uart_handle);
 
-void uart_transmit(UART_HandleTypeDef * uart_port, char * message);
+void uart_transmit(UART_HandleTypeDef * uart_port, uint8_t * message);
 
 bool uart_receive(UART_HandleTypeDef * uart_port, char * message, uint16_t length);
 
