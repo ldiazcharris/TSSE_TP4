@@ -10,6 +10,7 @@
  */
 
 #include "unity.h"
+#include "uart_driver.h"
 
 
 /** -----------------------------PRUEABAS A REALIZAR------------------------------------------
@@ -21,7 +22,22 @@
  *  
  */
 
-void test_prueba1()
+UART_HandleTypeDef uart2 = 0x0a;
+uart_struct_t uart_struct;
+
+// Se inicializa la estructura del objeto uart con el hardware inicializado 
+void test_inicializacion_objeto_uart()
 {
-    TEST_FAIL_MESSAGE("EMPEZAMOS");
+    uart_struct = uart_init(&uart2);
+
+    TEST_ASSERT_EQUAL_UINT16(&uart2, uart_struct.uart_port);
+    TEST_ASSERT_EQUAL_INT(&uart_transmit, uart_struct.transmit);
+    TEST_ASSERT_EQUAL_INT(&uart_receive, uart_struct.receive);
+
+}
+
+// Se pude transmitr un byte
+void test_transmision_un_byte()
+{
+    uart_struct.transmit(uart_struct.port, )
 }
