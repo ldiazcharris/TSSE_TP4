@@ -11,12 +11,16 @@
   :line: 41
   :message: ''
   :unity_test_time: 0
-:failures: []
+:failures:
+- :test: test_recepcion_un_byte
+  :line: 54
+  :message: Expected 104 Was 0
+  :unity_test_time: 0
 :ignores: []
 :counts:
-  :total: 2
+  :total: 3
   :passed: 2
-  :failed: 0
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.002016156002355274
+:time: 0.0019942259968956932

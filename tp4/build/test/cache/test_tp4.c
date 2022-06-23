@@ -59,3 +59,25 @@ void test_transmision_un_byte()
    ), (UNITY_UINT)(45), UNITY_DISPLAY_STYLE_UINT8);
 
 }
+
+
+
+
+
+void test_recepcion_un_byte()
+
+{
+
+    uint8_t caracter = 0;
+
+    uint8_t recv_byte = 'h';
+
+    uart_struct.receive(uart_struct.uart_port, &caracter, 1);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((recv_byte)), (UNITY_INT)(UNITY_UINT8 )((caracter)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(54), UNITY_DISPLAY_STYLE_UINT8);
+
+}

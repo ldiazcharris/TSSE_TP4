@@ -14,8 +14,8 @@
 
 
 /** -----------------------------PRUEABAS A REALIZAR------------------------------------------
- *  1. Se inicializa la estructura del objeto uart con el hardware inicializado 
- *  2. Se pude transmitr un byte
+ *  1. Se inicializa la estructura del objeto uart con el hardware inicializado ---- OK
+ *  2. Se pude transmitr un byte ---- OK
  *  3. Se pude recibir un byte
  *  4. Se puede transmitir una cadena de caracteres
  *  5. Se puede recibir una cadena de caracteres
@@ -43,4 +43,13 @@ void test_transmision_un_byte()
     uint8_t caracter = 'C';
     uart_struct.transmit(uart_struct.uart_port, &caracter);
     TEST_ASSERT_EQUAL_UINT8('C', transmit_buffer[0]);
+}
+
+// Se pude recibir un byte
+void test_recepcion_un_byte()
+{
+    uint8_t caracter = 0;
+    uint8_t recv_byte = 'h';
+    uart_struct.receive(uart_struct.uart_port, &caracter, 1);
+    TEST_ASSERT_EQUAL_UINT8(recv_byte, caracter);
 }

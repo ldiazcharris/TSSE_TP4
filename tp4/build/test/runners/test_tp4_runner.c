@@ -12,6 +12,7 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_inicializacion_objeto_uart();
 extern void test_transmision_un_byte();
+extern void test_recepcion_un_byte();
 
 
 /*=======Mock Management=====*/
@@ -84,6 +85,7 @@ int main(void)
   UnityBegin("test_tp4.c");
   run_test(test_inicializacion_objeto_uart, "test_inicializacion_objeto_uart", 30);
   run_test(test_transmision_un_byte, "test_transmision_un_byte", 41);
+  run_test(test_recepcion_un_byte, "test_recepcion_un_byte", 49);
 
   return UnityEnd();
 }
