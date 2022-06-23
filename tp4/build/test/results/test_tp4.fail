@@ -15,12 +15,16 @@
   :line: 50
   :message: ''
   :unity_test_time: 0
-:failures: []
+:failures:
+- :test: test_transmision_un_string
+  :line: 63
+  :message: Expected 'Hola Mundo' Was 'H'
+  :unity_test_time: 0
 :ignores: []
 :counts:
-  :total: 3
+  :total: 4
   :passed: 3
-  :failed: 0
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.002031118994636927
+:time: 0.0015938389988150448

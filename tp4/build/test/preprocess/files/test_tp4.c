@@ -83,3 +83,23 @@ void test_recepcion_un_byte()
    ), (UNITY_UINT)(55), UNITY_DISPLAY_STYLE_UINT8);
 
 }
+
+
+
+
+
+void test_transmision_un_string()
+
+{
+
+    uint8_t string[] = "Hola Mundo";
+
+    uart_struct.transmit(uart_struct.uart_port, string);
+
+    UnityAssertEqualString((const char*)((string)), (const char*)((transmit_buffer)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(63));
+
+}
