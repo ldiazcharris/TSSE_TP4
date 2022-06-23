@@ -39,5 +39,7 @@ void test_inicializacion_objeto_uart()
 // Se pude transmitr un byte
 void test_transmision_un_byte()
 {
-    uart_struct.transmit(uart_struct.port, )
+    uint8_t caracter = 'C';
+    uart_struct.transmit(uart_struct.uart_port, (char *) &caracter);
+    TEST_ASSERT_EQUAL_UINT8('C', transmit_buffer[0]);
 }

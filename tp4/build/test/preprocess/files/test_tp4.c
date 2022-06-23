@@ -37,3 +37,23 @@ void test_inicializacion_objeto_uart()
 
 
 }
+
+
+
+
+
+void test_transmision_un_byte()
+
+{
+
+    uint8_t caracter = 'C';
+
+    uart_struct.transmit(uart_struct.uart_port, (char *) &caracter);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )(('C')), (UNITY_INT)(UNITY_UINT8 )((transmit_buffer[0])), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(44), UNITY_DISPLAY_STYLE_UINT8);
+
+}

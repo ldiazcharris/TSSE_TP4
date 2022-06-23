@@ -6,7 +6,7 @@
 #include<stdbool.h>
 #include<stdint.h>
 
-extern char transmit_buffer[8];
+extern uint8_t transmit_buffer[8];
 
 typedef uint16_t UART_HandleTypeDef;
 
