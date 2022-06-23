@@ -18,8 +18,8 @@
  *  1. Se inicializa la estructura del objeto uart con el hardware inicializado ---- OK
  *  2. Se pude transmitr un byte ---- OK
  *  3. Se pude recibir un byte ---- OK
- *  4. Se puede transmitir una cadena de caracteres 
- *  5. Se puede recibir una cadena de caracteres
+ *  4. Se puede transmitir una cadena de caracteres ---- OK
+ *  5. Se puede recibir una cadena de caracteres ---- OK
  *  
  */
 
@@ -29,7 +29,7 @@ uint8_t transmit_buffer[128] = "";
 
 //uint8_t recv_buffer[128] = "";
 
-// Se inicializa la estructura del objeto uart con el hardware inicializado 
+// 1. Se inicializa la estructura del objeto uart con el hardware inicializado
 void test_inicializacion_objeto_uart()
 {
     uart_struct = uart_init(&uart2);
@@ -40,7 +40,7 @@ void test_inicializacion_objeto_uart()
 
 }
 
-// Se pude transmitr un byte
+// 2. Se pude transmitr un byte
 void test_transmision_un_byte()
 {
     uint8_t caracter[128] = "C";
@@ -48,7 +48,7 @@ void test_transmision_un_byte()
     TEST_ASSERT_EQUAL_STRING(caracter, transmit_buffer);
 }
 
-// Se pude recibir un byte
+// 3. Se pude recibir un byte
 void test_recepcion_un_byte()
 {
     uint8_t buffer_a_guardar[128];
@@ -57,7 +57,7 @@ void test_recepcion_un_byte()
     TEST_ASSERT_EQUAL_STRING(recv_buffer, buffer_a_guardar);
 }
 
-// Se puede transmitir una cadena de caracteres 
+// 4. Se puede transmitir una cadena de caracteres 
 void test_transmision_un_string()
 {
     uint8_t string[] = "Hola Mundo";
@@ -66,7 +66,7 @@ void test_transmision_un_string()
     
 }
 
-// Se pude recibir una cadena de caracteres 
+// 5. Se pude recibir una cadena de caracteres 
 void test_recepcion_un_string()
 {
     uint8_t buffer_a_guardar[128];
