@@ -5,9 +5,9 @@ UART_HandleTypeDef uart2 = 0x0a;
 
 uart_struct_t uart_struct;
 
-uint8_t transmit_buffer[8] = "";
+uint8_t transmit_buffer[128] = "";
 
-uint8_t recv_buffer[8] = "";
+uint8_t recv_buffer[128] = "hola persona";
 
 
 
@@ -51,15 +51,15 @@ void test_transmision_un_byte()
 
 {
 
-    uint8_t caracter = 'C';
+    uint8_t caracter[128] = "C";
 
-    uart_struct.transmit(uart_struct.uart_port, &caracter);
+    uart_struct.transmit(uart_struct.uart_port, caracter);
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((caracter)), (UNITY_INT)(UNITY_UINT8 )((transmit_buffer)), (
+    UnityAssertEqualString((const char*)((caracter)), (const char*)((transmit_buffer)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(47), UNITY_DISPLAY_STYLE_UINT8);
+   ), (UNITY_UINT)(47));
 
 }
 
@@ -71,17 +71,15 @@ void test_recepcion_un_byte()
 
 {
 
-    uint8_t caracter = 0;
+    uint8_t buffer_a_guardar[128];
 
-    recv_buffer[0] = 'h';
+    uart_struct.receive(uart_struct.uart_port, buffer_a_guardar, 128);
 
-    uart_struct.receive(uart_struct.uart_port, &caracter, 1);
-
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((recv_buffer[0])), (UNITY_INT)(UNITY_UINT8 )((caracter)), (
+    UnityAssertEqualString((const char*)((recv_buffer)), (const char*)((buffer_a_guardar)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(56), UNITY_DISPLAY_STYLE_UINT8);
+   ), (UNITY_UINT)(55));
 
 }
 
@@ -101,6 +99,26 @@ void test_transmision_un_string()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(64));
+   ), (UNITY_UINT)(63));
+
+}
+
+
+
+
+
+void test_recepcion_un_string()
+
+{
+
+    uint8_t buffer_a_guardar[128];
+
+    uart_struct.receive(uart_struct.uart_port, buffer_a_guardar, 128);
+
+    UnityAssertEqualString((const char*)((recv_buffer)), (const char*)((buffer_a_guardar)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(71));
 
 }

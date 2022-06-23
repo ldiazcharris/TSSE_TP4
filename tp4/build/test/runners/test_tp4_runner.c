@@ -14,6 +14,7 @@ extern void test_inicializacion_objeto_uart();
 extern void test_transmision_un_byte();
 extern void test_recepcion_un_byte();
 extern void test_transmision_un_string();
+extern void test_recepcion_un_string();
 
 
 /*=======Mock Management=====*/
@@ -87,7 +88,8 @@ int main(void)
   run_test(test_inicializacion_objeto_uart, "test_inicializacion_objeto_uart", 32);
   run_test(test_transmision_un_byte, "test_transmision_un_byte", 43);
   run_test(test_recepcion_un_byte, "test_recepcion_un_byte", 51);
-  run_test(test_transmision_un_string, "test_transmision_un_string", 60);
+  run_test(test_transmision_un_string, "test_transmision_un_string", 59);
+  run_test(test_recepcion_un_string, "test_recepcion_un_string", 67);
 
   return UnityEnd();
 }

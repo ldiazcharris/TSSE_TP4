@@ -7,24 +7,28 @@
   :line: 32
   :message: ''
   :unity_test_time: 0
-:failures:
 - :test: test_transmision_un_byte
-  :line: 47
-  :message: Expected 67 Was 136
-  :unity_test_time: 0
-- :test: test_recepcion_un_byte
-  :line: 56
-  :message: Expected 104 Was 0
+  :line: 43
+  :message: ''
   :unity_test_time: 0
 - :test: test_transmision_un_string
-  :line: 64
-  :message: Expected 'Hola Mundo' Was ''
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_recepcion_un_byte
+  :line: 55
+  :message: Expected 'hola persona' Was '\x10\xD3\xC6\x06\xFE\x7F'
+  :unity_test_time: 0
+- :test: test_recepcion_un_string
+  :line: 71
+  :message: Expected 'hola persona' Was '\x10\xD3\xC6\x06\xFE\x7F'
   :unity_test_time: 0
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 1
-  :failed: 3
+  :total: 5
+  :passed: 3
+  :failed: 2
   :ignored: 0
 :stdout: []
-:time: 0.0021967480060993694
+:time: 0.002449239997076802
