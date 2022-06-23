@@ -11,6 +11,7 @@
 
 #include "unity.h"
 #include "uart_driver.h"
+#include "mockup_hal.h"
 
 
 /** -----------------------------PRUEABAS A REALIZAR------------------------------------------
@@ -43,7 +44,7 @@ void test_transmision_un_byte()
 {
     uint8_t caracter = 'C';
     uart_struct.transmit(uart_struct.uart_port, &caracter);
-    TEST_ASSERT_EQUAL_UINT8('C', transmit_buffer[0]);
+    TEST_ASSERT_EQUAL_UINT8(caracter, transmit_buffer);
 }
 
 // Se pude recibir un byte

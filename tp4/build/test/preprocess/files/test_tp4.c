@@ -1,3 +1,4 @@
+#include "src/mockup_hal.h"
 #include "src/uart_driver.h"
 #include "/var/lib/gems/2.7.0/gems/ceedling-0.31.1/vendor/unity/src/unity.h"
 UART_HandleTypeDef uart2 = 0x0a;
@@ -24,19 +25,19 @@ void test_inicializacion_objeto_uart()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(35), UNITY_DISPLAY_STYLE_UINT16);
+   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_UINT16);
 
     UnityAssertEqualNumber((UNITY_INT)((&uart_transmit)), (UNITY_INT)((uart_struct.transmit)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(37), UNITY_DISPLAY_STYLE_INT);
 
     UnityAssertEqualNumber((UNITY_INT)((&uart_receive)), (UNITY_INT)((uart_struct.receive)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(37), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(38), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -54,11 +55,11 @@ void test_transmision_un_byte()
 
     uart_struct.transmit(uart_struct.uart_port, &caracter);
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )(('C')), (UNITY_INT)(UNITY_UINT8 )((transmit_buffer[0])), (
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((caracter)), (UNITY_INT)(UNITY_UINT8 )((transmit_buffer)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(46), UNITY_DISPLAY_STYLE_UINT8);
+   ), (UNITY_UINT)(47), UNITY_DISPLAY_STYLE_UINT8);
 
 }
 
@@ -80,7 +81,7 @@ void test_recepcion_un_byte()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(55), UNITY_DISPLAY_STYLE_UINT8);
+   ), (UNITY_UINT)(56), UNITY_DISPLAY_STYLE_UINT8);
 
 }
 
@@ -100,6 +101,6 @@ void test_transmision_un_string()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(63));
+   ), (UNITY_UINT)(64));
 
 }

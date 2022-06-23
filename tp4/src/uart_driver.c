@@ -1,5 +1,6 @@
 
 #include "uart_driver.h"
+#include "mockup_hal.h"
 
 uart_struct_t uart_init(UART_HandleTypeDef * uart_handle)
 {
@@ -12,12 +13,21 @@ uart_struct_t uart_init(UART_HandleTypeDef * uart_handle)
 	return uart_struct;
 }
 
-void uart_transmit(UART_HandleTypeDef * uart_port, uint8_t *message)
+void uart_transmit(UART_HandleTypeDef *uart_port, uint8_t *message)
 {
-	transmit_buffer[0] = *message;
+	if(message != NULL)
+	{
+		HAL_UART_Transmit(uart_port, message, (uint16_t) strlen(message), 0xFFF);
+	}
+	
 }
 
-bool uart_receive(UART_HandleTypeDef * uart_port, uint8_t * message, uint16_t length)
+bool uart_receive(UART_HandleTypeDef *uart_port, uint8_t *buffer, uint16_t len)
 {
-	*message = recv_buffer[0];
+	if(buffer != NULL)
+	{
+		HAL_UART_Transmit(uart_port, buffer, len, 0xFFF);
+	}
+
+	
 }
