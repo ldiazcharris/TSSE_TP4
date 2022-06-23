@@ -17,7 +17,7 @@ void uart_transmit(UART_HandleTypeDef * uart_port, uint8_t *message)
 	transmit_buffer[0] = *message;
 }
 
-bool uart_receive(UART_HandleTypeDef * uart_port, char * message, uint16_t length)
+bool uart_receive(UART_HandleTypeDef * uart_port, uint8_t * message, uint16_t length)
 {
-	
+	*message = recv_buffer[0];
 }

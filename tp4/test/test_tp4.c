@@ -25,6 +25,7 @@
 UART_HandleTypeDef uart2 = 0x0a;
 uart_struct_t uart_struct;
 uint8_t transmit_buffer[8] = "";
+uint8_t recv_buffer[8] = "";
 
 // Se inicializa la estructura del objeto uart con el hardware inicializado 
 void test_inicializacion_objeto_uart()
@@ -49,7 +50,7 @@ void test_transmision_un_byte()
 void test_recepcion_un_byte()
 {
     uint8_t caracter = 0;
-    uint8_t recv_byte = 'h';
+    recv_buffer[0] = 'h';
     uart_struct.receive(uart_struct.uart_port, &caracter, 1);
-    TEST_ASSERT_EQUAL_UINT8(recv_byte, caracter);
+    TEST_ASSERT_EQUAL_UINT8(recv_buffer[0], caracter);
 }

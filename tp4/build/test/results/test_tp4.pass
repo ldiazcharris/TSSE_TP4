@@ -4,23 +4,23 @@
   :file: test_tp4.c
 :successes:
 - :test: test_inicializacion_objeto_uart
-  :line: 30
+  :line: 31
   :message: ''
   :unity_test_time: 0
 - :test: test_transmision_un_byte
-  :line: 41
+  :line: 42
   :message: ''
   :unity_test_time: 0
-:failures:
 - :test: test_recepcion_un_byte
-  :line: 54
-  :message: Expected 104 Was 0
+  :line: 50
+  :message: ''
   :unity_test_time: 0
+:failures: []
 :ignores: []
 :counts:
   :total: 3
-  :passed: 2
-  :failed: 1
+  :passed: 3
+  :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0019942259968956932
+:time: 0.002031118994636927
