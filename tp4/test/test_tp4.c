@@ -26,7 +26,8 @@
 UART_HandleTypeDef uart2 = 0x0a;
 uart_struct_t uart_struct;
 uint8_t transmit_buffer[128] = "";
-uint8_t recv_buffer[128] = "hola persona";
+
+//uint8_t recv_buffer[128] = "";
 
 // Se inicializa la estructura del objeto uart con el hardware inicializado 
 void test_inicializacion_objeto_uart()
@@ -51,6 +52,7 @@ void test_transmision_un_byte()
 void test_recepcion_un_byte()
 {
     uint8_t buffer_a_guardar[128];
+    strcpy(recv_buffer, "h");
     uart_struct.receive(uart_struct.uart_port, buffer_a_guardar, 128);
     TEST_ASSERT_EQUAL_STRING(recv_buffer, buffer_a_guardar);
 }
@@ -61,12 +63,14 @@ void test_transmision_un_string()
     uint8_t string[] = "Hola Mundo";
     uart_struct.transmit(uart_struct.uart_port, string);
     TEST_ASSERT_EQUAL_STRING(string, transmit_buffer);
+    
 }
 
 // Se pude recibir una cadena de caracteres 
 void test_recepcion_un_string()
 {
     uint8_t buffer_a_guardar[128];
+    strcpy(recv_buffer, "Hola Maquina");
     uart_struct.receive(uart_struct.uart_port, buffer_a_guardar, 128);
     TEST_ASSERT_EQUAL_STRING(recv_buffer, buffer_a_guardar);
 }

@@ -85,11 +85,11 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("test_tp4.c");
-  run_test(test_inicializacion_objeto_uart, "test_inicializacion_objeto_uart", 32);
-  run_test(test_transmision_un_byte, "test_transmision_un_byte", 43);
-  run_test(test_recepcion_un_byte, "test_recepcion_un_byte", 51);
-  run_test(test_transmision_un_string, "test_transmision_un_string", 59);
-  run_test(test_recepcion_un_string, "test_recepcion_un_string", 67);
+  run_test(test_inicializacion_objeto_uart, "test_inicializacion_objeto_uart", 33);
+  run_test(test_transmision_un_byte, "test_transmision_un_byte", 44);
+  run_test(test_recepcion_un_byte, "test_recepcion_un_byte", 52);
+  run_test(test_transmision_un_string, "test_transmision_un_string", 61);
+  run_test(test_recepcion_un_string, "test_recepcion_un_string", 70);
 
   return UnityEnd();
 }

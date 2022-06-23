@@ -4,31 +4,31 @@
   :file: test_tp4.c
 :successes:
 - :test: test_inicializacion_objeto_uart
-  :line: 32
+  :line: 33
   :message: ''
   :unity_test_time: 0
 - :test: test_transmision_un_byte
-  :line: 43
+  :line: 44
+  :message: ''
+  :unity_test_time: 0
+- :test: test_recepcion_un_byte
+  :line: 52
   :message: ''
   :unity_test_time: 0
 - :test: test_transmision_un_string
-  :line: 59
+  :line: 61
   :message: ''
   :unity_test_time: 0
-:failures:
-- :test: test_recepcion_un_byte
-  :line: 55
-  :message: Expected 'hola persona' Was '\x10\xD3\xC6\x06\xFE\x7F'
-  :unity_test_time: 0
 - :test: test_recepcion_un_string
-  :line: 71
-  :message: Expected 'hola persona' Was '\x10\xD3\xC6\x06\xFE\x7F'
+  :line: 70
+  :message: ''
   :unity_test_time: 0
+:failures: []
 :ignores: []
 :counts:
   :total: 5
-  :passed: 3
-  :failed: 2
+  :passed: 5
+  :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002449239997076802
+:time: 0.002389970002695918

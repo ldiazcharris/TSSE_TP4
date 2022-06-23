@@ -7,7 +7,9 @@ uart_struct_t uart_struct;
 
 uint8_t transmit_buffer[128] = "";
 
-uint8_t recv_buffer[128] = "hola persona";
+
+
+
 
 
 
@@ -25,19 +27,19 @@ void test_inicializacion_objeto_uart()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_UINT16);
+   ), (UNITY_UINT)(37), UNITY_DISPLAY_STYLE_UINT16);
 
     UnityAssertEqualNumber((UNITY_INT)((&uart_transmit)), (UNITY_INT)((uart_struct.transmit)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(37), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(38), UNITY_DISPLAY_STYLE_INT);
 
     UnityAssertEqualNumber((UNITY_INT)((&uart_receive)), (UNITY_INT)((uart_struct.receive)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(38), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(39), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -59,7 +61,7 @@ void test_transmision_un_byte()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(47));
+   ), (UNITY_UINT)(48));
 
 }
 
@@ -73,13 +75,15 @@ void test_recepcion_un_byte()
 
     uint8_t buffer_a_guardar[128];
 
+    strcpy(recv_buffer, "h");
+
     uart_struct.receive(uart_struct.uart_port, buffer_a_guardar, 128);
 
     UnityAssertEqualString((const char*)((recv_buffer)), (const char*)((buffer_a_guardar)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(55));
+   ), (UNITY_UINT)(57));
 
 }
 
@@ -99,7 +103,9 @@ void test_transmision_un_string()
 
    ((void *)0)
 
-   ), (UNITY_UINT)(63));
+   ), (UNITY_UINT)(65));
+
+
 
 }
 
@@ -113,12 +119,14 @@ void test_recepcion_un_string()
 
     uint8_t buffer_a_guardar[128];
 
+    strcpy(recv_buffer, "Hola Maquina");
+
     uart_struct.receive(uart_struct.uart_port, buffer_a_guardar, 128);
 
     UnityAssertEqualString((const char*)((recv_buffer)), (const char*)((buffer_a_guardar)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(71));
+   ), (UNITY_UINT)(75));
 
 }

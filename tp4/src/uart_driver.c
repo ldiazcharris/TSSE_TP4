@@ -26,7 +26,8 @@ bool uart_receive(UART_HandleTypeDef *uart_port, uint8_t *buffer, uint16_t len)
 {
 	if(buffer != NULL)
 	{
-		HAL_UART_Transmit(uart_port, buffer, len, 0xFFF);
+		HAL_UART_Receive(uart_port, buffer, len, 0xFFF);
+		
 	}
 
 	
